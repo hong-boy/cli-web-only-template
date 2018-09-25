@@ -1,5 +1,5 @@
-import HelloWorld from "./HelloWorld.mock"
+import HelloWorld from "./HelloWorld.mock";
 
 export default {
-    ...HelloWorld
-}
+    ...HelloWorld,
+};

@@ -7,9 +7,11 @@
     "scripts": {
         "start": "roadhog dev",
         "build": "roadhog build",
-        "eslint:fix": "eslint --fix app src",
-        "prettier:fix": "prettier --write {app,src,mock}/**/*.{js,css,less}",
-        "fix": "cross-env npm run eslint:fix && npm run prettier:fix"
+        "eslint:fix": "eslint --fix src",
+        "prettier:fix": "prettier --write {src,mock}/**/*.{js,css,less}",
+        "fix": "cross-env npm run eslint:fix && npm run prettier:fix",
+        "precommit": "npm run fix",
+        "commitmsg": "commitlint -E GIT_PARAMS"
     },
     "dependencies": {
         "dva": "^2.4.0",
@@ -35,11 +37,5 @@
         "prettier": "^1.14.3",
         "redbox-react": "^1.4.3",
         "roadhog": "^2.0.0"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged",
-            "commit-msg": "commitlint -E GIT_PARAMS"
-        }
     }
 }
